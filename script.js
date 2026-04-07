@@ -34,17 +34,17 @@ function resize() { W = sc.width = window.innerWidth; H = sc.height = window.inn
 resize();
 window.addEventListener('resize', resize);
 
-const stars = Array.from({ length: 70 }, () => ({
+const stars = Array.from({ length: 90 }, () => ({
   x:     Math.random(),
   y:     Math.random(),
-  size:  Math.random() * 5 + 2,
+  size:  Math.random() * 6 + 2,
   phase: Math.random() * Math.PI * 2,
   speed: Math.random() * .008 + .003,
   type:  Math.random() < .55 ? 'dot' : 'spark'
 }));
 
 function drawSpark(x, y, s, a) {
-  sctx.save(); sctx.globalAlpha = a; sctx.fillStyle = '#ffe8d0';
+  sctx.save(); sctx.globalAlpha = a; sctx.fillStyle = '#D9C3A9';
   sctx.beginPath();
   sctx.moveTo(x, y-s); sctx.lineTo(x+s*.18, y-s*.18); sctx.lineTo(x+s, y);
   sctx.lineTo(x+s*.18, y+s*.18); sctx.lineTo(x, y+s);
@@ -53,14 +53,14 @@ function drawSpark(x, y, s, a) {
 }
 
 function drawDot(x, y, s, a) {
-  sctx.save(); sctx.globalAlpha = a; sctx.fillStyle = '#ffe8d0';
+  sctx.save(); sctx.globalAlpha = a; sctx.fillStyle = '#D9C3A9';
   sctx.beginPath(); sctx.arc(x, y, s * .6, 0, Math.PI * 2); sctx.fill(); sctx.restore();
 }
 
 function animStars(t) {
   sctx.clearRect(0, 0, W, H);
   stars.forEach(s => {
-    const a = .2 + .7 * (Math.sin(t * s.speed + s.phase) * .5 + .5);
+    const a = .1 + .8 * (Math.sin(t * s.speed + s.phase) * .5 + .5);
     s.type === 'spark' ? drawSpark(s.x * W, s.y * H, s.size, a)
                        : drawDot  (s.x * W, s.y * H, s.size, a);
   });
@@ -86,3 +86,27 @@ window.addEventListener('scroll', () => {
     ? 'rgba(75,8,13,.88)'
     : 'rgba(75,8,13,.55)';
 });
+
+/* ── MOBILE DRAWER ── */
+const menuBtn     = document.querySelector('.menu-btn');
+const drawer      = document.querySelector('.nav-drawer');
+const overlay     = document.querySelector('.nav-overlay');
+const drawerClose = document.querySelector('.nav-drawer-close');
+const drawerLinks = document.querySelectorAll('.nav-drawer-link');
+
+function openDrawer() {
+  drawer.classList.add('open');
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeDrawer() {
+  drawer.classList.remove('open');
+  overlay.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+menuBtn.addEventListener('click', openDrawer);
+drawerClose.addEventListener('click', closeDrawer);
+overlay.addEventListener('click', closeDrawer);
+drawerLinks.forEach(link => link.addEventListener('click', closeDrawer));
