@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Niki Khanezai | Portfolio</title>
+</head>
+<body>
+
+  <div id="cur"></div>
+  <div id="cur-ring"></div>
+  <canvas id="starsCanvas"></canvas>
+
+  <!-- NAV (outside header so z-index is never trapped) -->
+  <nav class="nav">
+    <button class="menu-btn" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links">
+      <a href="#about-me">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#edu-section">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-art">
+        <img src="icon-2.png" alt="Panther illustration">
+      </div>
+      <div class="hero-text">
+        <h1>Hi, I'm Niki<br>Khanezai</h1>
+        <p class="tagline">Creative coder • Front-end developer • UI designer • Creative technologist</p>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">Scroll</div>
+  </header>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span class="hi">JavaScript</span><span class="dot"> ✦ </span>
+      <span>p5.js</span><span class="dot"> ✦ </span>
+      <span class="hi">Creative Technologist</span><span class="dot"> ✦ </span>
+      <span>UI Design</span><span class="dot"> ✦ </span>
+      <span class="hi">Front-end Developer</span><span class="dot"> ✦ </span>
+      <span>Arduino</span><span class="dot"> ✦ </span>
+      <span class="hi">Generative Art</span><span class="dot"> ✦ </span>
+      <span>Figma</span><span class="dot"> ✦ </span>
+      <span class="hi">JavaScript</span><span class="dot"> ✦ </span>
+      <span>p5.js</span><span class="dot"> ✦ </span>
+      <span class="hi">Creative Technologist</span><span class="dot"> ✦ </span>
+      <span>UI Design</span><span class="dot"> ✦ </span>
+      <span class="hi">Front-end Developer</span><span class="dot"> ✦ </span>
+      <span>Arduino</span><span class="dot"> ✦ </span>
+      <span class="hi">Generative Art</span><span class="dot"> ✦ </span>
+      <span>Figma</span><span class="dot"> ✦ </span>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ABOUT -->
+    <section id="about-me" class="about-me">
+      <h2 class="about-title reveal">About<br>Me</h2>
+      <div class="about-text reveal" style="transition-delay:.12s">
+        <p>Hi, I'm Niki Khanezai — a creative coder and front-end developer who loves building expressive, interactive experiences on the web. I'm currently studying MSc Creative Computing at University of the Arts London, exploring the intersection of code, design, and creativity.</p>
+        <p>I work mainly with JavaScript (especially p5.js) alongside HTML and CSS, and I'm expanding into Arduino and C++ to bring physical interaction into my creative practice — as well as developing in Data and APIs, Projection Mapping and Game design with Unity.</p>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="projects">
+      <div class="projects-header reveal">
+        <h2>Projects</h2>
+        <div class="projects-header-line"></div>
+      </div>
+      <div class="project-grid">
+
+        <!-- P5.JS SKETCHES  -->
+        <a href="sketches.html" class="project-card wide reveal" style="transition-delay:.15s">
+          <div class="project-card-thumb">
+            <img src="p5-sketches.png" alt="sketches-illustration">
+          </div>
+          <div class="project-card-body">
+            <span class="project-card-tag">p5.js • Generative Art • Six Sketches</span>
+            <h3 class="project-card-title">Creative Coding Gallery ✦</h3>
+            <p class="project-card-desc">A full gallery of interactive generative sketches — flow fields, tile art, character expressions and more. Click to explore.</p>
+          </div>
+        </a>
+
+        <!-- Who defines truth? - three.js  -->
+        <a href="https://nkanziii.github.io/Who-defines-truth/" class="project-card reveal">
+          <div class="project-card-thumb">
+            <img src="three.png" alt="three.js illustration">
+          </div>
+          <div class="project-card-body">
+            <span class="project-card-tag">JavaScript • Three.js</span>
+            <h3 class="project-card-title">Who defines truth?</h3>
+            <p class="project-card-desc">A Three.js 3D piece exploring the tension between faith and control — a veiled figure surrounded by darkness, circled by light and Arabic scripture. Inspired by personal experiences,
+               it questions how religious guidance can become a tool of power.</p>
+          </div>
+        </a>
+
+
+        <!-- JS RPG  -->
+        <a href="https://nkanziii.github.io/Role-Play-Game/" target="_blank" class="project-card reveal" style="transition-delay:.1s">
+          <div class="project-card-thumb">
+            <img src="rpg.png" alt="rpg illustration">
+          </div>
+          <div class="project-card-body">
+            <span class="project-card-tag">JavaScript • Game</span>
+            <h3 class="project-card-title">RPG</h3>
+            <p class="project-card-desc">A text-based role-play game with combat, inventory and a levelling system.</p>
+          </div>
+        </a>
+
+        <!-- CALORIE COUNTER  -->
+        <a href="https://nkanziii.github.io/Building-Calorie-Counter/" target="_blank" class="project-card reveal" style="transition-delay:.14s">
+          <div class="project-card-thumb">
+            <img src="calorie.png" alt="calorie illustration">
+          </div>
+          <div class="project-card-body">
+            <span class="project-card-tag">JavaScript • App</span>
+            <h3 class="project-card-title">Calorie Counter</h3>
+            <p class="project-card-desc">Track daily food intake with dynamic totals and a clean interface.</p>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- EDUCATION / SKILLS -->
+    <section id="edu-section" class="edu-skills">
+      <div class="edu-skills-left">
+        <div class="skills-header reveal">
+          <h2>Skills</h2>
+          <div class="skills-header-line"></div>
+        </div>
+        <div class="reveal">
+          <div class="content-panel skills-panel active">
+            <ul>
+              <li><span class="skill-pill">JavaScript</span></li>
+              <li><span class="skill-pill">p5.js</span></li>
+              <li><span class="skill-pill">HTML</span></li>
+              <li><span class="skill-pill">CSS</span></li>
+              <li><span class="skill-pill">Arduino &amp; C++</span></li>
+              <li><span class="skill-pill">Figma</span></li>
+              <li><span class="skill-pill">UI Design</span></li>
+              <li><span class="skill-pill">Illustrator</span></li>
+              <li><span class="skill-pill">Photoshop</span></li>
+              <li><span class="skill-pill">InDesign</span></li>
+              <li><span class="skill-pill">Procreate</span></li>
+              <li><span class="skill-pill">TouchDesigner</span></li>
+            </ul>
+          </div>
+        </div>
+    
+      </div>
+    
+      <div class="edu-skills-right reveal" style="transition-delay:.2s">
+        <img src="icon-3.png" alt="Panther illustration">
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+      <h2 class="reveal">Contact</h2>
+      <p class="reveal" style="transition-delay:.08s"><a href="mailto:nikikhanezai@gmail.com">nikikhanezai@gmail.com</a></p>
+      <p class="reveal" style="transition-delay:.14s"><a href="https://github.com/Nkanziii" target="_blank">GitHub</a></p>
+      <p class="reveal" style="transition-delay:.18s"><a href="https://www.linkedin.com/in/niki-khanezai-4ab5642aa/" target="_blank">LinkedIn</a></p>
+      <p class="reveal" style="transition-delay:.22s"><a href="https://www.behance.net/nikikhanezai2" target="_blank">Behance</a></p>
+      <a href="CV-revised.pdf" class="cv reveal" style="transition-delay:.28s">Download CV</a>
+    </section>
+
+  </main>
+
+  <footer>
+    <span>© 2026 Niki Khanezai</span>
+    <span>Creative Technologist | Developer</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

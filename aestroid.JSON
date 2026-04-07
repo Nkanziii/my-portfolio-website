@@ -1,0 +1,34 @@
+{
+    "asteroids": [
+      {
+        "name": "466633 (2009 JF)",
+        "diameter": 0.48,
+        "velocity": 40550,
+        "hazardous": true
+      },
+      {
+        "name": "2008 QV11",
+        "diameter": 0.32,
+        "velocity": 44178,
+        "hazardous": false
+      },
+      {
+        "name": "2010 IX10",
+        "diameter": 0.03,
+        "velocity": 42843,
+        "hazardous": false
+      },
+      {
+        "name": "2015 RC",
+        "diameter": 0.08,
+        "velocity": 43589,
+        "hazardous": false
+      },
+      {
+        "name": "2015 RO36",
+        "diameter": 0.15,
+        "velocity": 33563,
+        "hazardous": false
+      }
+    ]
+  }
