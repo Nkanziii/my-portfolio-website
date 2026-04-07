@@ -21,7 +21,7 @@
     #starsCanvas { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
 
     /* NAV */
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; justify-content: space-between; align-items: center; padding: 22px 44px; backdrop-filter: blur(18px); background: rgba(75,8,13,.55); border-bottom: 1px solid rgba(217,195,169,.1); }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 9000; display: flex; justify-content: space-between; align-items: center; padding: 22px 44px; backdrop-filter: blur(18px); background: rgba(75,8,13,.55); border-bottom: 1px solid rgba(217,195,169,.1); }
     .nav-logo { font-family: "Playfair Display", serif; font-weight: 700; font-size: 1.4rem; color: var(--cream); text-decoration: none; letter-spacing: -.02em; }
     .nav-logo span { color: #bb101e; }
     .nav-back { font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; color: var(--cream); text-decoration: none; opacity: .5; transition: opacity .2s; position: relative; }
@@ -78,6 +78,55 @@
     /* REVEAL */
     .reveal { opacity: 0; transform: translateY(30px); transition: opacity .8s ease, transform .8s ease; }
     .reveal.on { opacity: 1; transform: translateY(0); }
+
+    /* ── TABLET (≤ 900px) ── */
+    @media (max-width: 900px) {
+      nav { padding: 18px 24px; }
+      .hero { padding: 8rem 3rem 3rem; min-height: 50vh; }
+      .hero-title { font-size: clamp(2.5rem, 7vw, 5rem); }
+      .hero-desc { font-size: 1rem; }
+      .sketches-section { padding: 4rem 3rem 6rem; }
+      .section-title { margin-bottom: 2.5rem; }
+      .sketches-grid { gap: 1.8rem; }
+      .sketch-canvas-wrap { height: 300px; }
+      .sketch-title { font-size: 1.3rem; }
+      footer { padding: 1.5rem 2rem; gap: 8px; }
+    }
+
+    /* ── MOBILE (≤ 600px) ── */
+    @media (max-width: 600px) {
+      body { cursor: auto; }
+      #cur, #cur-ring { display: none; }
+
+      nav { padding: 14px 20px; }
+      .nav-logo { font-size: 1.2rem; }
+      .nav-back { font-size: .62rem; }
+
+      .hero { padding: 6rem 1.5rem 2.5rem; min-height: 40vh; }
+      .hero-eyebrow { font-size: .6rem; margin-bottom: 1rem; }
+      .hero-title { font-size: clamp(2.2rem, 10vw, 3.5rem); margin-bottom: 1rem; }
+      .hero-title .outline { -webkit-text-stroke: 1.5px var(--cream); }
+      .hero-desc { font-size: .92rem; line-height: 1.7; }
+
+      .sketches-section { padding: 3rem 1rem 5rem; }
+      .section-label { font-size: .6rem; }
+      .section-title { font-size: clamp(1.6rem, 6vw, 2.4rem); margin-bottom: 2rem; }
+
+      /* Full width cards stacked, canvas tall so sketch is visible */
+      .sketches-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .sketch-canvas-wrap { height: 340px; }
+
+      /* Compact info so canvas gets more room */
+      .sketch-info { padding: .9rem 1.2rem 1.1rem; }
+      .sketch-number { font-size: .55rem; margin-bottom: .35rem; }
+      .sketch-title { font-size: 1.1rem; margin-bottom: .4rem; }
+      .sketch-desc { font-size: .78rem; line-height: 1.6; margin-bottom: .8rem; }
+      .sketch-tags { gap: .35rem; margin-bottom: .6rem; }
+      .sketch-tag { font-size: .52rem; padding: 3px 9px; }
+      .sketch-cta { font-size: .6rem; }
+
+      footer { flex-direction: column; gap: 6px; text-align: center; padding: 1.2rem 1.5rem; font-size: .65rem; }
+    }
   </style>
 </head>
 <body>
