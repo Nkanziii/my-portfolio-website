@@ -34,7 +34,8 @@
    #starsCanvas { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
    
    /* All content sits above canvas */
-   header, section, .marquee-wrap, footer { position: relative; z-index: 1; }
+   section, .marquee-wrap, footer { position: relative; z-index: 1; }
+   header { position: relative; z-index: 1; }
    
    /* ── NAV ── */
    .nav {
@@ -251,6 +252,94 @@
    }
    .cv:hover { opacity: .85; transform: translateY(-3px); }
    
+   /* ── MOBILE NAV DRAWER ── */
+   .nav-overlay {
+     display: none;
+     position: fixed; inset: 0; z-index: 8000;
+     background: rgba(0,0,0,.5);
+     opacity: 0; transition: opacity .3s;
+   }
+   .nav-overlay.open { opacity: 1; }
+   
+   .nav-drawer {
+     position: fixed; top: 0; left: -280px; bottom: 0;
+     width: 260px; z-index: 8500;
+     background: rgba(75,8,13,.97);
+     border-right: 1px solid rgba(217,195,169,.15);
+     backdrop-filter: blur(20px);
+     display: flex; flex-direction: column;
+     padding: 80px 40px 40px;
+     transition: left .35s cubic-bezier(.4,0,.2,1);
+   }
+   .nav-drawer.open { left: 0; }
+   
+   .nav-drawer-close {
+     position: absolute; top: 24px; right: 24px;
+     background: none; border: none; color: var(--cream);
+     font-size: 1.3rem; cursor: pointer; opacity: .6;
+     transition: opacity .2s;
+   }
+   .nav-drawer-close:hover { opacity: 1; }
+   
+   .nav-drawer-link {
+     font-family: "Playfair Display", serif;
+     font-size: 1.8rem; font-weight: 500;
+     color: var(--cream); text-decoration: none;
+     opacity: .5; margin-bottom: 28px;
+     transition: opacity .2s, transform .2s;
+     transform: translateX(-10px);
+   }
+   .nav-drawer.open .nav-drawer-link { opacity: 1; transform: translateX(0); }
+   .nav-drawer-link:nth-child(2) { transition-delay: .05s; }
+   .nav-drawer-link:nth-child(3) { transition-delay: .1s; }
+   .nav-drawer-link:nth-child(4) { transition-delay: .15s; }
+   .nav-drawer-link:nth-child(5) { transition-delay: .2s; }
+   .nav-drawer-link:hover { opacity: .7; }
+   
+   /* ── MOBILE NAV DRAWER ── */
+   .nav-overlay {
+     display: none;
+     position: fixed; inset: 0; z-index: 8000;
+     background: rgba(0,0,0,.5);
+     opacity: 0; transition: opacity .3s;
+   }
+   .nav-overlay.open { opacity: 1; }
+   
+   .nav-drawer {
+     position: fixed; top: 0; left: -280px; bottom: 0;
+     width: 260px; z-index: 8500;
+     background: rgba(75,8,13,.97);
+     border-right: 1px solid rgba(217,195,169,.15);
+     backdrop-filter: blur(20px);
+     display: flex; flex-direction: column;
+     padding: 80px 40px 40px;
+     transition: left .35s cubic-bezier(.4,0,.2,1);
+   }
+   .nav-drawer.open { left: 0; }
+   
+   .nav-drawer-close {
+     position: absolute; top: 24px; right: 24px;
+     background: none; border: none; color: var(--cream);
+     font-size: 1.3rem; cursor: pointer; opacity: .6;
+     transition: opacity .2s;
+   }
+   .nav-drawer-close:hover { opacity: 1; }
+   
+   .nav-drawer-link {
+     font-family: "Playfair Display", serif;
+     font-size: 1.8rem; font-weight: 500;
+     color: var(--cream); text-decoration: none;
+     opacity: .5; margin-bottom: 28px;
+     transition: opacity .2s, transform .2s;
+     transform: translateX(-10px);
+   }
+   .nav-drawer.open .nav-drawer-link { opacity: 1; transform: translateX(0); }
+   .nav-drawer-link:nth-child(2) { transition-delay: .05s; }
+   .nav-drawer-link:nth-child(3) { transition-delay: .1s; }
+   .nav-drawer-link:nth-child(4) { transition-delay: .15s; }
+   .nav-drawer-link:nth-child(5) { transition-delay: .2s; }
+   .nav-drawer-link:hover { opacity: .7; }
+   
    /* ── FOOTER ── */
    footer {
      border-top: 1px solid rgba(217,195,169,.12); padding: 2rem 3rem;
@@ -313,10 +402,11 @@
      body { cursor: auto; }
      #cur, #cur-ring { display: none; }
     
-     /* Nav — hide links, show hamburger only */
+     /* Nav */
      .nav { padding: 16px 20px; }
      .nav-links { display: none; }
      .menu-btn { display: grid; }
+     .nav-overlay { display: block; }
     
      /* Hero */
      .hero-inner { padding: 80px 20px 40px; gap: 20px; }
