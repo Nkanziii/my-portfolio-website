@@ -231,6 +231,25 @@
      background: linear-gradient(90deg, var(--cream), transparent);
      opacity: .4;
    }
+
+.skills-group {
+  margin-bottom: 1.5rem;
+}
+
+.skills-group-label {
+  display: block;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin-bottom: 0.6rem;
+}
+
+.skills-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
    
    /* ── CONTACT ── */
    .contact {
